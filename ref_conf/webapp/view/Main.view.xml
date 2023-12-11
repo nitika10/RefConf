@@ -1,0 +1,122 @@
+<mvc:View controllerName="com.oil.refconf.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns:network="sap.suite.ui.commons.networkgraph"
+        xmlns:l="sap.ui.layout"
+        xmlns:core="sap.ui.core"
+        height="100%"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content />
+
+	
+			<l:FixFlex vertical="true" >
+			<l:fixContent>
+			<network:Graph
+					height="100vh"
+					width="100%"
+					enableWheelZoom="true"
+					orientation="{settings>/orientation}"
+					nodes="{/nodes}"
+					lines="{/lines}"
+					groups="{/groups}"
+					id="graph">
+					<network:statuses>
+			<network:Status key="CustomSuccess" title="Success" contentColor="sapUiCalendarColorToday" headerContentColor="sapUiCalendarColorToday"
+					borderColor="sapUiCalendarColorToday" selectedBackgroundColor="sapUiChartPaletteQualitativeHue10"
+					selectedBorderColor="sapUiChartPaletteQualitativeHue10" selectedContentColor="red"
+					hoverBorderColor="sapUiCalendarColorToday" hoverContentColor="black"
+					hoverBackgroundColor="sapUiCalendarColorToday"
+					legendColor="sapUiCalendarColorToday" useFocusColorAsContentColor="true"/>
+
+			<network:Status key="LineStatus" title="Line status"
+					borderColor="sapUiContentShadowColor" backgroundColor="sapUiContentShadowColor"
+					hoverBorderColor="sapUiContentShadowColor" hoverBackgroundColor="sapUiContentShadowColor"
+					legendColor="sapUiContentShadowColor"/>
+
+			<network:Status key="CustomGreen" title="Green Node" backgroundColor="green"
+					borderColor="sapUiContentShadowColor" hoverBorderColor="sapUiContentShadowColor" />
+
+			<network:Status key="CustomBlue" title="Blue Node" backgroundColor="sapUiChartPaletteSequentialHue1Light3"
+					borderColor="sapUiContentShadowColor" hoverBorderColor="sapUiContentShadowColor" />
+			
+			<network:Status key="CustomPink" title="Pink Node" backgroundColor="sapUiChartPaletteQualitativeHue8"
+					borderColor="sapUiContentShadowColor" hoverBorderColor="sapUiContentShadowColor" />
+
+			<network:Status key="CustomRed" title="Red Node" backgroundColor="sapUiChartPaletteSemanticBad"
+					borderColor="sapUiContentShadowColor" hoverBorderColor="sapUiContentShadowColor" />
+			
+			<network:Status key="CustomGrey" title="Grey Node" backgroundColor="sapUiChartPaletteSemanticNeutralLight3"
+					borderColor="sapUiContentShadowColor" hoverBorderColor="sapUiContentShadowColor" />
+
+			<network:Status key="CustomLightGrey" title="Light Grey Node" backgroundColor="sapUiChartPaletteSequentialNeutralDark1"
+					borderColor="sapUiContentShadowColor" hoverBorderColor="sapUiContentShadowColor" />
+
+			<network:Status key="CustomYellow" title="Yellow Node" backgroundColor="yellow"
+					borderColor="sapUiContentShadowColor" hoverBorderColor="sapUiContentShadowColor" />
+			
+			<network:Status key="CustomLightGreen" title="Light Green Node" backgroundColor="sapUiChartPaletteSemanticGoodLight2"
+					borderColor="sapUiContentShadowColor" hoverBorderColor="sapUiContentShadowColor" />
+
+			<network:Status key="CustomLightBlue" title="Light Blue Node" backgroundColor="sapUiChartPaletteSequentialHue1Light2"
+					borderColor="sapUiContentShadowColor" hoverBorderColor="sapUiContentShadowColor" />
+
+			<network:Status key="CustomeWhite" title="White Node" backgroundColor="white" borderColor="sapUiContentShadowColor" hoverBorderColor="sapUiContentShadowColor" />
+
+			<network:Status key="CustomStandardGroup" title="Standard"
+					borderColor="sapUiContentShadowColor" backgroundColor="sapUiNeutralBorder"
+					hoverBackgroundColor="sapUiNeutralBorder"
+					hoverContentColor="sapUiFieldWarningColor"
+					contentColor="sapUiFieldHelpBackground" useFocusColorAsContentColor="true"
+					legendColor="sapUiContentShadowColor"/>
+
+			<network:Status key="AttributeLabel" contentColor="sapUiCalendarColorToday"
+					hoverContentColor="red"
+					selectedContentColor="red"/>
+
+			<network:Status key="AttributeValue" contentColor="green"/>
+		</network:statuses>
+					
+				<network:nodes>
+					<network:Node
+							key="{key}"
+							title="{title}"
+							icon="{icon}"
+							attributes="{path:'attributes', templateShareable:true}"
+							group="{group}"
+							shape="{shape}"
+							status="{status}">
+						<network:attributes>
+							<network:ElementAttribute
+									label="{label}"
+									value="{value}"
+									visible="false" />
+						</network:attributes>
+					</network:Node>
+				</network:nodes>
+				<network:lines>
+					<network:Line
+							arrowPosition="{settings>/arrowPosition}"
+							arrowOrientation="{settings>/arrowOrientation}"
+							from="{from}"
+							to="{to}"
+							status="{status}">
+					</network:Line>
+				</network:lines>
+				<network:groups>
+					<network:Group
+							key="{key}"
+							title="{title}"
+							icon="{icon}"
+							status="{status}">
+					</network:Group>
+				</network:groups>
+			</network:Graph>
+		</l:fixContent>
+		</l:FixFlex>
+
+
+
+
+
+    </Page>
+</mvc:View>
